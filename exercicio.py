@@ -34,15 +34,11 @@ def gera_base(n):
 
 
 def rotulo_de_maior_frequencia(pessoas):
-    #lista = [1, 2, 4, 5, 1, 2, 2, 2, 5, 3]
-    # Counter(lista) = {1: 3, 2: 4, 4: 1, 5: 2, 3: 1}
     frequencias = Counter(pessoas)
-    # most_commn devolve uma lista de tuplas
     mais_frequentes = frequencias.most_common(1)
     return mais_frequentes[0][0]
 
 
-# rotulo para devolver o voto
 def rotulo_de_maior_frequencia_sem_empate(pessoas):
     frequencias = Counter(pessoas)
     rotulo, frequencia = frequencias.most_common(1)[0]
@@ -67,6 +63,8 @@ def knn(k, observacoes_rotuladas, nova_observacao):
     k_mais_proximos = ordenados_por_distancia[:k]
     resultado = rotulo_de_maior_frequencia_sem_empate(k_mais_proximos)
     return resultado.intencao_de_voto
+
+# Cross Validation Leave one Out
 
 
 def cross_validation(pessoas, k):
